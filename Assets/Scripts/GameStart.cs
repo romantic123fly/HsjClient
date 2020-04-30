@@ -19,17 +19,14 @@ public class GameStart : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A)) 
         {
             ProtocolMgr.SocketTest();
-            //ProtocolMgr.SocketTest();
-            //ProtocolMgr.SocketTest();
-            //ProtocolMgr.SocketTest();
-            //ProtocolMgr.SocketTest();
-            //ProtocolMgr.SocketTest();
-            //ProtocolMgr.SocketTest();
+            ProtocolMgr.SocketTest();
+            ProtocolMgr.SocketTest();
+            ProtocolMgr.SocketTest();
         }
 
         if (Input.GetKeyDown(KeyCode.S)) 
         {
-            ProtocolMgr.Register(RegisterType.Phone, "13659260524", "Ocean", "123456",(res) =>
+            ProtocolMgr.Register(RegisterType.Phone, "18569944325", "幻世界", "123456",(res) =>
             {
                 if (res == RegisterResult.AlreadyExist)
                 {
@@ -41,7 +38,7 @@ public class GameStart : MonoBehaviour
                 }
                 else if (res == RegisterResult.Forbidden)
                 {
-                    Debug.LogError("改账户禁止铸错，联系客服！");
+                    Debug.LogError("改账户禁止注册，联系客服！");
                 }
                 else if (res == RegisterResult.Success)
                 {
@@ -52,7 +49,7 @@ public class GameStart : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D)) 
         {
-            ProtocolMgr.Login( LoginType.Phone, "13659260524", "Ocean",(res,restoken)=> 
+            ProtocolMgr.Login( LoginType.Phone, "18569944325", "幻世",(res,restoken)=> 
             {
                 if (res == LoginResult.Success)
                 {
@@ -69,6 +66,10 @@ public class GameStart : MonoBehaviour
                 else if (res == LoginResult.UserNotExist)
                 {
                     Debug.LogError("用户不存在");
+                }
+                else if (res == LoginResult.TimeoutToken)
+                {
+                    Debug.LogError("Token已过期");
                 }
             });
         }

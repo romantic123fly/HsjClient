@@ -25,6 +25,7 @@ public class ProtocolMgr
         MsgTest msg = new MsgTest();
         msg.ReqContent = "客户端测试发送的数据：BBBBBBBBBBBBBBBBBBBBBBBBBBB" ;
         NetManager.Instance.SendMessage(msg);
+
         NetManager.Instance.AddProtoListener(ProtocolEnum.MsgTest, (resmsg) =>
         {
             Debug.Log("测试回调：" + ((MsgTest)resmsg).RecContent);

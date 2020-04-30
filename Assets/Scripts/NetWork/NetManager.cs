@@ -70,6 +70,7 @@ public class NetManager : Singleton<NetManager>
 
     public void FirstProto(ProtocolEnum protocolEnum, MsgBase msgBase)
     {
+        Debug.Log(protocolEnum);
         if (m_ProtoDic.ContainsKey(protocolEnum))
         {
             m_ProtoDic[protocolEnum](msgBase);
@@ -85,18 +86,18 @@ public class NetManager : Singleton<NetManager>
             //在本地保存了我们的账户和token，然后进行判断有无账户和token，
 
             //使用token登录
-            //ProtocolMgr.Login( LoginType.Token, "username", "token",(res, restoken)=> 
+            //ProtocolMgr.Login(LoginType.Token, "username", "token", (res, restoken) =>
             //{
             //    if (res == LoginResult.Success)
             //    {
 
             //    }
-            //    else 
+            //    else
             //    {
 
             //    }
             //});
-            m_ReConnect = false;
+            //m_ReConnect = false;
         }
 
         MsgUpdate();
