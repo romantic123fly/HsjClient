@@ -7,7 +7,7 @@ public class GameStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        NetManager.Instance.Connect("127.0.0.1", 8011);
+        NetManager.Instance.Connect("106.12.218.138", 8011);
         StartCoroutine(NetManager.Instance.CheckNetType());
     }
 
