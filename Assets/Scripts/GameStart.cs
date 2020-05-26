@@ -11,6 +11,7 @@ public class GameStart : MonoBehaviour
         StartCoroutine(NetManager.Instance.CheckNetType());
     }
 
+
     // Update is called once per frame
     void Update()
     {
